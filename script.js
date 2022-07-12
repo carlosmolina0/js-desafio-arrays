@@ -54,7 +54,7 @@ let gestiones = ["Alta nuevo empleado", "Baja de empleado", "Incrementar sueldo 
 //Función para Seleccionar que tipo de gestión realizar
 
 function seleccionGestion () {
-    seleccionaGestion = prompt("Selecciona la gestión a realizar:\n1. " + gestiones[0] + "\n2." + gestiones[1] + "\n3." + gestiones[2] + "\n4." + gestiones[3] + "\n5." + gestiones[4] + "\nSelecciona un número del 1 al 5 con la gestión a realizar")
+    seleccionaGestion = prompt("Selecciona la gestión a realizar:\n\n1. " + gestiones[0] + "\n2." + gestiones[1] + "\n3." + gestiones[2] + "\n4." + gestiones[3] + "\n5." + gestiones[4] + "\n\nSelecciona un número del 1 al 5 con la gestión a realizar")
 }
 
 
@@ -254,11 +254,21 @@ let diasVacaciones = prompt("Ingresa el número de días de Vacaciones disfrutad
 
     }*/
 
+
+//Función Mostar Lista de Empleados en la Consola
+
+    if(gestion == "Total empleados") {
+        const totalEmpleados = directores.concat(marketingyventas.concat(operaciones))
+        console.log(`La empresa tiene actualmente" ${totalEmpleados.length} "empleados`)
+        totalEmpleados.forEach(empleado => {console.log(empleado.nombre, empleado.apellido)})
+        alert(`La empresa tiene actualmente" ${totalEmpleados.length} "empleados`)
+    }
+
+
 let otraGestion = prompt("¿Deseas realizar otra gestión? (Si o No)")
 otraGestion.toLowerCase()
-console.log(otraGestion)
     if (otraGestion == "si") {
     alert ("Perfecto. Continua para seleccionar el tipo de gestión que quieres realizar")
     } else { alert ("Muchas gracias por tu tiempo, vuelve cuando quieras y que tengas un excelente día")}
 
-} while (otraGestion != "no")
+} while (otraGestion == "si")
