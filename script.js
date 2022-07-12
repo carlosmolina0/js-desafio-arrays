@@ -104,7 +104,7 @@ function gestionAdicional () {
 
 //Le pedimos al usuario que seleccione que Gestión quiere realizar
 
-do {
+do { 
 
     do {
         seleccionGestion ()
@@ -264,11 +264,13 @@ let diasVacaciones = prompt("Ingresa el número de días de Vacaciones disfrutad
         alert(`La empresa tiene actualmente" ${totalEmpleados.length} "empleados`)
     }
 
+// Pregunta si desea realizar otra gestión
 
-let otraGestion = prompt("¿Deseas realizar otra gestión? (Si o No)")
-otraGestion.toLowerCase()
-    if (otraGestion == "si") {
-    alert ("Perfecto. Continua para seleccionar el tipo de gestión que quieres realizar")
-    } else { alert ("Muchas gracias por tu tiempo, vuelve cuando quieras y que tengas un excelente día")}
+let otraGestion = prompt("¿Deseas realizar otra gestión? (Si o No)").toLowerCase()
+if (otraGestion == "no") {
+    alert ("Muchas gracias por tu tiempo, vuelve cuando quieras y que tengas un excelente día")
+    } else {alert ("Perfecto. Continua para seleccionar el tipo de gestión que quieres realizar") }
+    console.log(otraGestion)
 
-} while (otraGestion == "si")
+} while (otraGestion != "no")
+
