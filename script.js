@@ -33,8 +33,8 @@ trabajador1 = new Personal (0, "Raúl", "De Pablos", 48, "CEO", "22", "70000", [
 
 let trabajador8
 let empleadoBaja
-let otraGestion
 let seleccionaGestion 
+let otraGestion
 
 //Creamos un Array con cada Departamento
 
@@ -61,7 +61,7 @@ function seleccionGestion () {
 //Función para calcular y mostrar el Total de Empleados
 
 function calcularEmpleados () {
-    const totalEmpleados = directores.concat(marketingyventas.concat(operaciones))
+    let totalEmpleados = directores.concat(marketingyventas.concat(operaciones))
     console.log(`La empresa tiene actualmente" ${totalEmpleados.length} "empleados`)
     totalEmpleados.forEach(empleado => {console.log(empleado.nombre, empleado.apellido)});
 }
@@ -78,7 +78,7 @@ function altaEmpleado () {
 
 function seleccionarEmpleado () {
 
-    const totalEmpleados = directores.concat(marketingyventas.concat(operaciones))
+    totalEmpleados = directores.concat(marketingyventas.concat(operaciones))
     empleado = prompt("Selecciona el empleado sobre el que quieres actuar:\n1. " + totalEmpleados[0].nombre + " " + totalEmpleados[0].apellido + "\n2." + totalEmpleados[1].nombre + " " + totalEmpleados[1].apellido + "\n3." + totalEmpleados[2].nombre + " " + totalEmpleados[2].apellido + "\n4." + totalEmpleados[3].nombre + " " + totalEmpleados[3].apellido + "\n5." + totalEmpleados[4].nombre + " " + totalEmpleados[4].apellido + "\n6." + totalEmpleados[5].nombre + " " + totalEmpleados[5].apellido + "\n7." + totalEmpleados[6].nombre + " " + totalEmpleados[6].apellido + "\nSelecciona un número del 1 al 7 para seleccionar el empleado sobre el que realizar la Gestión")
 }
 
@@ -103,6 +103,7 @@ function gestionAdicional () {
 
 
 //Le pedimos al usuario que seleccione que Gestión quiere realizar
+
 
 do { 
 
@@ -187,7 +188,7 @@ do {
 
         } while (isNaN(empleado)) 
 
-        const totalEmpleados = directores.concat(marketingyventas.concat(operaciones))
+        totalEmpleados = directores.concat(marketingyventas.concat(operaciones))
         const nombreBaja = (totalEmpleados.splice(posicionBaja,1))
 
         alert (`El trabajador ${nombreBaja[0].nombre} ${nombreBaja[0].apellido} se ha dado de baja de la compañía`)
@@ -258,7 +259,7 @@ let diasVacaciones = prompt("Ingresa el número de días de Vacaciones disfrutad
 //Función Mostar Lista de Empleados en la Consola
 
     if(gestion == "Total empleados") {
-        const totalEmpleados = directores.concat(marketingyventas.concat(operaciones))
+        totalEmpleados = directores.concat(marketingyventas.concat(operaciones))
         console.log(`La empresa tiene actualmente" ${totalEmpleados.length} "empleados`)
         totalEmpleados.forEach(empleado => {console.log(empleado.nombre, empleado.apellido)})
         alert(`La empresa tiene actualmente" ${totalEmpleados.length} "empleados`)
@@ -266,11 +267,10 @@ let diasVacaciones = prompt("Ingresa el número de días de Vacaciones disfrutad
 
 // Pregunta si desea realizar otra gestión
 
-let otraGestion = prompt("¿Deseas realizar otra gestión? (Si o No)").toLowerCase()
+otraGestion = prompt("¿Deseas realizar otra gestión? (Si o No)").toLowerCase()
 if (otraGestion == "no") {
     alert ("Muchas gracias por tu tiempo, vuelve cuando quieras y que tengas un excelente día")
     } else {alert ("Perfecto. Continua para seleccionar el tipo de gestión que quieres realizar") }
     console.log(otraGestion)
 
 } while (otraGestion != "no")
-
