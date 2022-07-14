@@ -102,7 +102,7 @@ function gestionAdicional () {
     calcularEmpleados ()
 
 
-//Le pedimos al usuario que seleccione que Gestión quiere realizar
+//Le pedimos al usuario que seleccione que Gestión quiere realizar 
 
 
 do { 
